@@ -1,4 +1,4 @@
-Basic gulp template for we projects.
+Basic gulp template for node projects.
 ====================================
 
 Pack src repo and compile to www.

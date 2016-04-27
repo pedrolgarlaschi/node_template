@@ -14,11 +14,11 @@ gulp.task('browserify' , function(){
 		entries:['./src/javascript/client/main.js'],
 		extensions:['.js'],
 		debug:true
-	}).transform("babelify", {presets: ["es2015"]});
+	}).transform(babelify.configure({presets: ["es2015"]}));
 
 	var bundle = function(){
 		return bundler.bundle()
-		.on('error' , function(e){console.log('error bundle: ' , e)})
+		.on('error' , function(err){ console.log('err: ' , err);})
 		.pipe(source('main.js'))
 		.pipe(gulp.dest('./www/'))
 		.on('end' , function(){console.log('end')})

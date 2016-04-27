@@ -14,6 +14,8 @@ Server.prototype  = {
 	],
 	handlers : {
 		getIndex:function(req , res){
+			console.log('get index');
+
 			res.sendFile(path.resolve('./www/index.html'));
 		},
 	},

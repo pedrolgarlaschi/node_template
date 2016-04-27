@@ -1,6 +1,9 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var babelify = require('babelify');
+var watchify = require('watchify');
+
 
 gulp.task('browserify' , function(){
 
@@ -9,8 +12,9 @@ gulp.task('browserify' , function(){
 		packageCache:{},
 		fullPaths:true,
 		entries:['./src/javascript/client/main.js'],
-		extensions:['.js']
-	});
+		extensions:['.js'],
+		debug:true
+	}).transform(babelify.configure());
 
 	var bundle = function(){
 		return bundler.bundle()
@@ -18,6 +22,14 @@ gulp.task('browserify' , function(){
 		.pipe(gulp.dest('./www/'))
 		.on('end' , function(){console.log('end')})
 	};
+
+
+	if(global.isWatching)
+	{
+		bundler = watchify(bundler);
+
+		bundler.on('update' , bundle);
+	}
 
 	return bundle();
 })

@@ -4,7 +4,9 @@
   "description": "Basic template application",
   "main": "index.js",
   "dependencies": {
+    "babelify": "^7.3.0",
     "body-parser": "^1.15.0",
+    "browser-sync": "^2.12.5",
     "browserify": "^13.0.0",
     "express": "^4.13.4",
     "gulp": "^3.9.1",
@@ -13,7 +15,8 @@
     "gulp-imagemin": "^2.4.0",
     "gulp-sass": "^2.3.1",
     "require-dir": "^0.3.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   },
   "devDependencies": {},
   "scripts": {

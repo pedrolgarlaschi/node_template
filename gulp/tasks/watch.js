@@ -1,2 +1,2 @@
 var gulp  = require('gulp');
-gulp.task('watch' , ['build']);
+gulp.task('watch' , ['setWatch','browserSync']);

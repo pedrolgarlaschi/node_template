@@ -1,13 +1,17 @@
-Basic gulp template for node projects.
-====================================
+# CPH Lockers
 
-Pack src repo and compile to www.
 
-#### Intall
+## Instalation
+ 
+```
 npm install
+```
 
-### Run
+## Running
+
+```
+npm start
+node index
 gulp
 
-
-
+```
